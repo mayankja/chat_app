@@ -1,5 +1,6 @@
 class MessagesController < ApplicationController
-
+  before_action :authenticate_user!
+  
   def index
     @send_messages =  current_user.send_messages
     @received_messages = current_user.received_messages
